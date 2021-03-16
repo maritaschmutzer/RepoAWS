@@ -24,7 +24,7 @@ def register(request):
                 last_name = request.POST["last_name"],
                 email = request.POST["email"],
                 password = pw_hash,
-                fecha_cumpleaños = request.POST["fecha_cumpleaños"]
+                fecha_cumpleanos = request.POST["fecha_cumpleanos"]
             )
         request.session['userid'] = User.objects.last().id
     return redirect("/success")

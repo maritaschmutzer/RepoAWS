@@ -35,8 +35,8 @@
             </div>
             <div class="mb-3">
               <label class="form-label">Birthday Date</label>
-              <input type="date" class="form-control" name="fecha_cumpleaños" />
-              {% for message in messages %} {% if "fecha_cumpleaños" in message.tags %}
+              <input type="date" class="form-control" name="fecha_cumpleanos" />
+              {% for message in messages %} {% if "fecha_cumpleanos" in message.tags %}
               <p class="error" style="color: red;">{{message}}</p>
               {% endif %} {% endfor %}
             </div>
@@ -96,7 +96,7 @@
                 <td>{{ user.first_name }}</td>
                 <td>{{ user.last_name }}</td>
                 <td>{{ user.email }}</td>
-                <td>{{ user.fecha_cumpleaños }}</td>
+                <td>{{ user.fecha_cumpleanos }}</td>
                 <td>{{ user.password }}</td>
 
             </tr>

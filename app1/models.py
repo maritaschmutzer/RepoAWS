@@ -17,8 +17,8 @@ class BlogManager(models.Manager):
             pass
         else:
             errors["password_confirm"] = "Las contraseñas deben coincidir"
-        if postData["fecha_cumpleaños"] > str(datetime.date.today()):
-            errors["fecha_cumpleaños"] = "Fecha cumpleaños cannot be in the future!"
+        if postData["fecha_cumpleanos"] > str(datetime.date.today()):
+            errors["fecha_cumpleanos"] = "Fecha cumpleaños cannot be in the future!"
         todos_los_usuarios = User.objects.all() 
         for user in todos_los_usuarios:
             if postData['email'] != user.email:
@@ -33,7 +33,7 @@ class User(models.Model):
     last_name = models.CharField(max_length=255, default="")
     email= models.EmailField(max_length=255)
     password = models.CharField(max_length=255)
-    fecha_cumpleaños = models.DateTimeField()
+    fecha_cumpleanos = models.DateTimeField(null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = BlogManager()
